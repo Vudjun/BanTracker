@@ -1,0 +1,16 @@
+name: BanTracker
+version: 0.1
+description: Tracks players IPs, and prevents players from joining from the same IP as a banned player.
+author: Vudjun
+main: com.vudjun.plugins.bantracker.BanTracker
+
+commands:
+  alts:
+    description: Shows a list of alts and IPs for the specified player.
+    permission: bantracker.listalts
+    usage: /<command> <name>
+
+permissions:
+  bantracker.listalts:
+    description: Allows listing of alts and IPs using /alts <name>
+    default: op
