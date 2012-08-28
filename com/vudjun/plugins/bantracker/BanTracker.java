@@ -162,8 +162,11 @@ public class BanTracker extends JavaPlugin implements Listener {
 		return changesMade;
 	}
 
-	@EventHandler(priority = EventPriority.NORMAL)
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerLogin(PlayerLoginEvent evt) {
+		if (evt.getResult() != Result.ALLOWED) {
+			return;
+		}
 		String playerName = evt.getPlayer().getName();
 		PlayerFile file = getPlayerFile(playerName);
 		String ip = evt.getAddress().getHostAddress();
